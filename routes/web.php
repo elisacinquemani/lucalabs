@@ -20,3 +20,6 @@ Route::resource('/students', 'StudentsController');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/login/facebook', 'Auth\LoginController@redirectToProviderFacebook')->name('facebookLogin');
+Route::get('/callback', 'Auth\LoginController@handleProviderFacebookCallback');
