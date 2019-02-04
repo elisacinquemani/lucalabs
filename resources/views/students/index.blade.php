@@ -8,6 +8,7 @@
         <th> Name </th>
         <th> Surname </th>
         <th> Birthday </th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
@@ -16,6 +17,7 @@
           <td> {{$value->name}} </td>
           <td> {{$value->surname}} </td>
           <td> {{$value->birthday}} </td>
+          <td> <a href="{{ url('/students/1/edit')}}">Modifica</a> </td>
         </tr>
       @endforeach
     </tbody>

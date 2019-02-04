@@ -16,7 +16,7 @@ class StudentTableSeeder extends Seeder
     $student = Student::create([
       'name' => 'Jimmy',
       'surname' => 'Anderson',
-      'birthday' => date('Y/m/d')
+      'birthday' => date('Y-m-d')
     ]);
 
     echo $student;

@@ -13,6 +13,8 @@ use Illuminate\Http\Request;
 |
 */
 
+// Tutte le route che devono comunicare con server esterni si gestiscono da QUA
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });

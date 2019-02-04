@@ -137,7 +137,7 @@ return [
   'providers' => [
 
     /*
-    * Laravel Framework Service Providers...
+    * Laravel Framework Service Providers... SE INIZIA CON ILLUMINATE
     */
 
     Illuminate\Auth\AuthServiceProvider::class,

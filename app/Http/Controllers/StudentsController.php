@@ -36,7 +36,17 @@ class StudentsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $this->validate($request,[
+        'name' => 'required',
+        'surname' => 'required',
+        'birthday' => 'required|date|before:tomorrow'
+      ]);
+      $student = new Student([
+        'name'=> $request->get('name'),
+        'surname'=> $request->get('surname'),
+        'birthday'=> $request->get('birthday')
+      ]);
+      $student->save();
     }
 
     /**
@@ -58,7 +68,8 @@ class StudentsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $student = Student::find($id);
+        return view('students.edit')->withStudent($student);
     }
 
     /**
@@ -70,7 +81,7 @@ class StudentsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      //MADONNA TROIA
     }
 
     /**

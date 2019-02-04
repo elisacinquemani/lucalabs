@@ -13,7 +13,7 @@ class SubjectTableSeeder extends Seeder
     public function run()
     {
       Subject::create([
-        'credits' => '5',
+        'credits' => '3',
         'tot_hours' => '69'
       ]);
     }

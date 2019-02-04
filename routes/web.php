@@ -11,11 +11,13 @@
 |
 */
 
+// Gestisco tutte le route da QUA
+
 Route::get('/', function () {
     return view('home.welcome');
 });
 
-Route::resource('/students', 'StudentsController');
+Route::resource('/students', 'StudentsController')->middleware('auth');
 
 Auth::routes();
 
