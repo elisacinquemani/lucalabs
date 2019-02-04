@@ -47,6 +47,7 @@ class StudentsController extends Controller
         'birthday'=> $request->get('birthday')
       ]);
       $student->save();
+      return redirect('/students');
     }
 
     /**
@@ -81,7 +82,13 @@ class StudentsController extends Controller
      */
     public function update(Request $request, $id)
     {
-      //MADONNA TROIA
+      $this->validate($request,[
+        'name' => 'required',
+        'surname' => 'required',
+        'birthday' => 'required|date|before:tomorrow'
+      ]);
+      Student::find($id)->update($request->all());
+      return redirect('/students');
     }
 
     /**
@@ -92,6 +99,8 @@ class StudentsController extends Controller
      */
     public function destroy($id)
     {
-        //
+      $student = Student::find($id);
+      $student->delete();
+      return redirect('/students');
     }
 }

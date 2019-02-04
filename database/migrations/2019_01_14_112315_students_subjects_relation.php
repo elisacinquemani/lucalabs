@@ -15,7 +15,7 @@ class StudentsSubjectsRelation extends Migration
   {
     Schema::table('subjects', function(Blueprint $table)
     {
-      $table->foreign('student_id')->references('id')->on('students');
+      $table->foreign('student_id')->references('id')->on('students')->onDelete('cascade');
     });
   }
 
